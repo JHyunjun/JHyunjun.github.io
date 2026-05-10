@@ -1,3 +1,3 @@
-# Hyunjun Jang Homepage V11 Clean
+# Hyunjun Jang Homepage V13 Mobile
 
-Clean rebuild fixing runtime syntax issues and restoring CSS.
+Improved mobile responsiveness, spacing, typography, and card layout.
