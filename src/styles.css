@@ -136,8 +136,8 @@ img { display: block; max-width: 100%; }
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 44px;
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  gap: 42px;
   align-items: center;
   min-height: calc(100vh - 88px);
 }
@@ -155,15 +155,15 @@ img { display: block; max-width: 100%; }
 }
 .hero-copy h1 {
   margin: 0;
-  max-width: 720px;
-  line-height: 0.92;
-  letter-spacing: -0.072em;
+  max-width: 760px;
+  line-height: 0.94;
+  letter-spacing: -0.052em;
   overflow: visible;
 }
 .hero-copy h1 span,
 .hero-copy h1 strong {
   display: block;
-  font-size: clamp(3.5rem, 6.2vw, 5.9rem);
+  font-size: clamp(3.25rem, 5.7vw, 5.45rem);
   font-weight: 900;
 }
 .hero-copy h1 strong {
@@ -199,10 +199,10 @@ img { display: block; max-width: 100%; }
 }
 .proof-card strong {
   display: block;
-  font-size: 1.55rem;
-  line-height: 1;
+  font-size: clamp(1.25rem, 1.55vw, 1.52rem);
+  line-height: 1.05;
   font-weight: 900;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.035em;
 }
 .proof-card span {
   display: block;
@@ -214,7 +214,7 @@ img { display: block; max-width: 100%; }
 }
 .hero-visual-frame {
   position: relative;
-  max-width: 760px;
+  width: min(100%, 690px);
   margin-left: auto;
   padding: 14px;
   border-radius: 42px;
@@ -410,7 +410,7 @@ img { display: block; max-width: 100%; }
 
 .education-grid {
   display: grid;
-  grid-template-columns: minmax(0,1fr) minmax(330px,0.94fr) minmax(0,1fr);
+  grid-template-columns: minmax(0,1fr) minmax(340px,0.96fr) minmax(0,1fr);
   gap: 18px;
   align-items: stretch;
   margin-top: 34px;
@@ -1044,6 +1044,166 @@ img { display: block; max-width: 100%; }
     padding: 5px 8px;
   }
 }
+
+
+/* v14 final responsive tuning: prevent hero title clipping, reduce hero image dominance,
+   keep education core centered, and make archives readable on mobile. */
+@media (max-width: 1120px) {
+  .hero-inner {
+    gap: 28px;
+  }
+  .hero-visual-frame {
+    width: min(92vw, 680px);
+    margin-inline: auto;
+  }
+  .hero-copy h1 {
+    max-width: 100%;
+    letter-spacing: -0.048em;
+  }
+  .hero-copy h1 span,
+  .hero-copy h1 strong {
+    font-size: clamp(3.25rem, 11vw, 6.1rem);
+    line-height: 0.96;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-inner {
+    gap: 22px;
+  }
+  .hero-visual-frame {
+    order: -1;
+    width: min(88vw, 560px);
+    padding: 7px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+  }
+  .hero-visual-frame img {
+    border-radius: 22px;
+  }
+  .hero-copy h1 {
+    letter-spacing: -0.036em;
+  }
+  .hero-copy h1 span {
+    font-size: clamp(2.85rem, 13.2vw, 4.55rem);
+    line-height: 0.98;
+  }
+  .hero-copy h1 strong {
+    font-size: clamp(2.65rem, 12.2vw, 4.3rem);
+    line-height: 1.02;
+    letter-spacing: -0.038em;
+    padding-right: 2px;
+  }
+  .proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .proof-card strong {
+    font-size: 1.22rem;
+    line-height: 1.05;
+  }
+  .section-head.split {
+    gap: 18px;
+  }
+  .archive-list {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-bottom: 32px;
+  }
+  .hero-inner {
+    gap: 18px;
+  }
+  .hero-visual-frame {
+    width: min(86vw, 460px);
+    margin-top: 2px;
+  }
+  .eyebrow {
+    white-space: normal;
+  }
+  .hero-copy h1 span {
+    font-size: clamp(2.5rem, 12.6vw, 3.85rem);
+    line-height: 1;
+  }
+  .hero-copy h1 strong {
+    font-size: clamp(2.25rem, 11.35vw, 3.5rem);
+    line-height: 1.03;
+    letter-spacing: -0.026em;
+  }
+  .proof-grid {
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .proof-card {
+    min-height: 82px;
+    padding: 12px 10px;
+  }
+  .proof-card strong {
+    font-size: 1.06rem;
+  }
+  .proof-card span {
+    font-size: 0.68rem;
+  }
+  .education-grid {
+    gap: 12px;
+  }
+  .core-card {
+    min-height: 250px;
+    padding: 24px 16px;
+  }
+  .core-title-wrap {
+    max-width: 230px;
+  }
+  .core-title-wrap h3 {
+    font-size: clamp(1.75rem, 8.8vw, 2.35rem);
+    letter-spacing: -0.045em;
+  }
+  .archive-item {
+    padding: 14px;
+  }
+  .archive-content h3 {
+    font-size: 0.96rem;
+    line-height: 1.34;
+  }
+  .archive-content p,
+  .archive-content small {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .container,
+  .header {
+    width: min(calc(100% - 18px), var(--max));
+  }
+  .hero-copy h1 span {
+    font-size: clamp(2.35rem, 12vw, 3.25rem);
+  }
+  .hero-copy h1 strong {
+    font-size: clamp(2.05rem, 10.65vw, 3.0rem);
+    letter-spacing: -0.018em;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .edu-major {
+    font-size: clamp(1.48rem, 8vw, 2.05rem);
+  }
+  .archive-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+  .archive-item {
+    grid-template-columns: 34px minmax(0,1fr);
+  }
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

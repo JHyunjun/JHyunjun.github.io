@@ -1,3 +1,3 @@
-# Hyunjun Jang Homepage V13 Mobile
+# Hyunjun Jang Homepage V14 Final Responsive
 
-Improved mobile responsiveness, spacing, typography, and card layout.
+Fixes desktop/mobile hero title clipping, balances hero image size, refines education core card, and improves archive readability.
