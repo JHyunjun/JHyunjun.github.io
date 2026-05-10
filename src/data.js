@@ -104,17 +104,20 @@ export const profile = {
     {
       title: "Battery Diagnostics Patents",
       body: "Granted and published IP across battery abnormality diagnosis, SOH modeling, aging-aware control, and vehicle battery management.",
-      href: "#patents"
+      href: "#patents",
+      icon: "/assets/icon-patents.png"
     },
     {
       title: "Journal & Conference Research",
       body: "Applied Energy, IEEE ITEC, KSAE, JSAE, EVS37, and battery diagnostics / degradation / generative modeling work.",
-      href: "#research"
+      href: "#research",
+      icon: "/assets/icon-research.png"
     },
     {
       title: "Field-Oriented AI Modeling",
       body: "A research identity grounded in BMS constraints, high-voltage battery systems, fault diagnosis, real mobility operation, and a dual chemical-engineering / computer-engineering foundation.",
-      href: "#systems"
+      href: "#systems",
+      icon: "/assets/icon-ai-modeling.png"
     }
   ],
 

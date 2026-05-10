@@ -1,25 +1,28 @@
-# Hyunjun Jang Homepage V7
+# Hyunjun Jang Homepage V9
 
-Final premium Apple-style refinement.
+Final high-fidelity Apple-inspired refinement.
 
-## V7 updates
+## V9 highlights
 
-- Fixed hero typography overlap by reducing max hero size and separating object layout.
-- Removed SNU / Yonsei proof chips from the first hero screen.
-- Added LinkedIn professional network proof to the hero:
-  - 1K+ LinkedIn network
-- Changed all-black page into alternating Apple-like dark/light surfaces.
-- Public Presence section now appears as a clean light section.
-- Education remains below, with SNU / Yonsei shown later as a cross-disciplinary story.
-- Research and patents remain selected-first with archive controls.
-- Overall design is cleaner, less crowded, and more premium.
+- More designer-level spacing, rhythm, and typography
+- Hero visual glow, subtle motion, and premium depth
+- Evidence cards use large colorful image panels
+- Education emphasizes majors first:
+  - Chemical and Biological Engineering
+  - Computer Engineering
+- Degree labels are secondary:
+  - PhD Candidate
+  - Master of Eng.
+- Publications and patents are fully visible, no toggles
+- Research / patent archive list redesigned for credibility and readability
+- Stronger mobile responsiveness
 
-## Deploy update
+## Deploy
 
-Copy all files into the existing `JHyunjun.github.io` local folder, overwrite, then run:
+Copy all files into the existing local `JHyunjun.github.io` folder, overwrite, then run:
 
 ```bash
 git add .
-git commit -m "Final premium Apple style refinement v7"
+git commit -m "Finalize designer quality homepage v9"
 git push
 ```

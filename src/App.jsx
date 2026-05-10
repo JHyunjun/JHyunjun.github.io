@@ -1,87 +1,57 @@
-import { useEffect, useState } from "react";
 import { profile } from "./data.js";
-
-function useReveal() {
-  useEffect(() => {
-    const targets = document.querySelectorAll("[data-reveal]");
-    const io = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add("visible");
-        });
-      },
-      { threshold: 0.12 }
-    );
-    targets.forEach(el => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-}
 
 function Header() {
   return (
     <header className="header">
-      <a className="brand" href="#top" aria-label="Go to top">HJ</a>
+      <a className="brand" href="#top">
+        <span>Hyunjun</span>
+        <strong>Jang</strong>
+      </a>
       <nav className="nav">
         <a href="#presence">Presence</a>
-        <a href="#proof">Proof</a>
-        <a href="#education">Education</a>
-        <a href="#systems">Systems</a>
         <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#publications">Publications</a>
         <a href="#patents">Patents</a>
       </nav>
+      <div className="header-icons">
+        <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+        <a href={`mailto:${profile.email}`} aria-label="Email">✉</a>
+      </div>
     </header>
-  );
-}
-
-function Section({ id, tone = "dark", className = "", children }) {
-  return (
-    <section id={id} className={`page-section ${tone} ${className}`}>
-      <div className="section-inner">{children}</div>
-    </section>
-  );
-}
-
-function HeroProofLine() {
-  return (
-    <div className="hero-proof-line" data-reveal>
-      {profile.compactProof.map(item => <span key={item}>{item}</span>)}
-    </div>
-  );
-}
-
-function PremiumBatteryObject() {
-  return (
-    <div className="premium-object-wrap" data-reveal>
-      <div className="object-orbit orbit-a" />
-      <div className="object-orbit orbit-b" />
-      <img src="/assets/battery-intelligence-object.svg" alt="Battery intelligence object" />
-      <div className="object-label object-label-a">
-        <span>Signal</span>
-        <strong>Diagnostics</strong>
-      </div>
-      <div className="object-label object-label-b">
-        <span>AI</span>
-        <strong>Intelligence</strong>
-      </div>
-      <div className="object-label object-label-c">
-        <span>BMS</span>
-        <strong>Field Systems</strong>
-      </div>
-    </div>
   );
 }
 
 function Hero() {
   return (
-    <section className="hero-v7" id="top">
-      <div className="hero-inner">
-        <div className="hero-main">
-          <p className="kicker" data-reveal>{profile.koreanName} · {profile.title}</p>
-          <h1 data-reveal>AI.<br />BMS.<br />Intelligence.</h1>
-          <p className="hero-subtitle" data-reveal>{profile.subtitle}</p>
-          <HeroProofLine />
+    <section className="hero" id="top">
+      <div className="hero-noise" aria-hidden="true" />
+      <div className="hero-orb orb-one" aria-hidden="true" />
+      <div className="hero-orb orb-two" aria-hidden="true" />
+
+      <div className="container hero-inner">
+        <div className="hero-copy">
+          <p className="eyebrow">{profile.koreanName} · Battery Intelligence</p>
+          <h1>
+            <span>AI. BMS.</span>
+            <strong>Intelligence.</strong>
+          </h1>
+          <p className="hero-subtitle">{profile.subtitle}</p>
+
+          <div className="proof-grid">
+            {profile.proofChips.map((item) => (
+              <div className="proof-card" key={item.label}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <PremiumBatteryObject />
+
+        <div className="hero-visual-frame">
+          <div className="hero-visual-aura" aria-hidden="true" />
+          <img src="/assets/hero-energy-ai.png" alt="Colorful AI battery intelligence visual" />
+        </div>
       </div>
     </section>
   );
@@ -89,270 +59,250 @@ function Hero() {
 
 function Presence() {
   return (
-    <Section id="presence" tone="light" className="presence-section">
-      <div className="split-heading" data-reveal>
-        <p className="kicker">Public Presence</p>
-        <h2>Technical writing, professional reach, and research implementation.</h2>
+    <section className="surface presence" id="presence">
+      <div className="container">
+        <div className="section-head split">
+          <div>
+            <p className="section-kicker">Public Presence</p>
+            <h2>Technical influence, professional reach, and research implementation.</h2>
+          </div>
+          <p>
+            A compact public hub for technical writing, professional identity,
+            and code-based research artifacts.
+          </p>
+        </div>
+
+        <div className="links-grid">
+          {profile.links.map((item) => (
+            <a className="link-card" href={item.href} key={item.label} target="_blank" rel="noreferrer">
+              <div className="link-card-bg" aria-hidden="true" />
+              <div className="link-top">
+                <strong>{item.label}</strong>
+                <span>↗</span>
+              </div>
+              <em>{item.metric}</em>
+              <p>{item.caption}</p>
+            </a>
+          ))}
+        </div>
       </div>
-      <div className="presence-grid">
-        {profile.heroLinks.map(item => (
-          <a className="presence-card" href={item.href} key={item.label} target="_blank" rel="noreferrer" data-reveal>
-            <div className="presence-top">
-              <strong>{item.label}</strong>
-              <span>↗</span>
+    </section>
+  );
+}
+
+function Evidence() {
+  return (
+    <section className="surface evidence-section" id="research">
+      <div className="container">
+        <div className="section-head center">
+          <p className="section-kicker">Evidence Snapshot</p>
+          <h2>Three pillars of research and innovation.</h2>
+          <p>
+            Battery diagnostics, peer-reviewed research, and field-oriented AI modeling
+            are presented as visible proof, not decoration.
+          </p>
+        </div>
+
+        <div className="evidence-grid">
+          {profile.evidenceSnapshot.map((item) => (
+            <a className="evidence-card" href={item.href} key={item.title}>
+              <div className="evidence-image">
+                <img src={item.icon} alt={item.title} />
+              </div>
+              <div className="evidence-body">
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+                <div className="metric-row">
+                  <div><strong>{item.value1}</strong><span>{item.metric1}</span></div>
+                  <div><strong>{item.value2}</strong><span>{item.metric2}</span></div>
+                  <div><strong>{item.value3}</strong><span>{item.metric3}</span></div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Education() {
+  const { left, center, right } = profile.education;
+
+  return (
+    <section className="surface education-section" id="education">
+      <div className="container">
+        <div className="section-head center">
+          <p className="section-kicker">Education</p>
+          <h2>Battery physics meets algorithmic intelligence.</h2>
+          <p>
+            The strongest signal is the combination: chemical engineering depth
+            for battery systems and computer engineering depth for AI systems.
+          </p>
+        </div>
+
+        <div className="education-grid">
+          <article className="edu-card light-card">
+            <div className="edu-header">
+              <img className="edu-badge" src={left.badge} alt="SNU badge" />
+              <span>{left.school}</span>
             </div>
-            <em>{item.metric}</em>
-            <p>{item.caption}</p>
-          </a>
-        ))}
-      </div>
-    </Section>
-  );
-}
+            <h3 className="edu-major">{left.department}</h3>
+            <p className="edu-degree">{left.degree}</p>
+            <p className="edu-detail">{left.detail}</p>
+          </article>
 
-function ProofSnapshot() {
-  return (
-    <Section id="proof" tone="dark" className="proof-snapshot">
-      <div className="section-head" data-reveal>
-        <p className="kicker">Evidence Snapshot</p>
-        <h2>Not a claim. A body of work.</h2>
-        <p>
-          Field BMS experience, AI research direction, technical writing impact,
-          and battery diagnostics output are presented as evidence, not decoration.
-        </p>
-      </div>
-      <div className="evidence-grid">
-        {profile.evidenceSnapshot.map(item => (
-          <a className="evidence-card" href={item.href} key={item.title} data-reveal>
-            <div className="evidence-icon" aria-hidden="true" />
-            <h3>{item.title}</h3>
-            <p>{item.body}</p>
-            <span>View evidence →</span>
-          </a>
-        ))}
-      </div>
-    </Section>
-  );
-}
+          <article className="edu-card core-card">
+            <div className="core-pulse" aria-hidden="true" />
+            <span className="core-tag">{center.tag}</span>
+            <div className="core-title-wrap">
+              <h3>{center.title1}</h3>
+              <h3>{center.title2}</h3>
+            </div>
+            <p className="core-detail">{center.body}</p>
+          </article>
 
-function EducationFusion() {
-  return (
-    <Section id="education" tone="light" className="education-section">
-      <div className="section-head center-head" data-reveal>
-        <p className="kicker">Education</p>
-        <h2>Battery physics meets algorithmic intelligence.</h2>
-        <p>
-          A dual foundation: chemical and biological engineering for battery systems,
-          and computer engineering for AI, software, and model-building.
-        </p>
-      </div>
-
-      <div className="fusion-stage" data-reveal>
-        <article className="fusion-school">
-          <img src="/assets/snu-badge.svg" alt="SNU custom badge" />
-          <span>Seoul National University</span>
-          <h3>PhD Candidate</h3>
-          <p>Chemical and Biological Engineering</p>
-        </article>
-
-        <div className="fusion-core">
-          <span>Cross-disciplinary core</span>
-          <strong>Battery Intelligence</strong>
-          <em>Physical grounding × AI systems × BMS reality</em>
-        </div>
-
-        <article className="fusion-school">
-          <img src="/assets/yonsei-badge.svg" alt="Yonsei custom badge" />
-          <span>Yonsei University</span>
-          <h3>M.Eng</h3>
-          <p>Computer Engineering</p>
-        </article>
-      </div>
-    </Section>
-  );
-}
-
-function About() {
-  return (
-    <Section id="about" tone="dark" className="about-section">
-      <div className="section-head" data-reveal>
-        <p className="kicker">About</p>
-        <h2>Real systems first. AI that respects battery behavior.</h2>
-      </div>
-      <div className="about-grid">
-        <div className="about-panel" data-reveal>
-          <p>{profile.overview}</p>
-          <p>{profile.vision}</p>
-        </div>
-        <div className="identity-panel" data-reveal>
-          <div><span>Name</span><strong>{profile.name}</strong></div>
-          <div><span>Identity</span><strong>{profile.identity}</strong></div>
-          <div><span>Focus</span><strong>{profile.headline}</strong></div>
-          <div><span>Location</span><strong>{profile.location}</strong></div>
+          <article className="edu-card light-card">
+            <div className="edu-header">
+              <img className="edu-badge" src={right.badge} alt="Yonsei badge" />
+              <span>{right.school}</span>
+            </div>
+            <h3 className="edu-major">{right.department}</h3>
+            <p className="edu-degree">{right.degree}</p>
+            <p className="edu-detail">{right.detail}</p>
+          </article>
         </div>
       </div>
-    </Section>
-  );
-}
-
-function KeynoteStatement({ item, index, tone }) {
-  return (
-    <Section tone={tone} className={`keynote-statement keynote-${index + 1}`}>
-      <div className="keynote-panel" data-reveal>
-        <h2>{item.line1}<br />{item.line2}</h2>
-      </div>
-    </Section>
+    </section>
   );
 }
 
 function Focus() {
   return (
-    <Section id="focus" tone="dark" className="focus-section">
-      <div className="section-head" data-reveal>
-        <p className="kicker">Core Focus</p>
-        <h2>Three pillars of AI-centered battery expertise.</h2>
-      </div>
-      <div className="focus-grid">
-        {profile.focusAreas.map(item => (
-          <article className="focus-card" key={item.title} data-reveal>
-            <div className="focus-image-wrap"><img src={item.image} alt={item.title} /></div>
-            <h3>{item.title}</h3>
-            <p>{item.body}</p>
-          </article>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-function Systems() {
-  return (
-    <Section id="systems" tone="light" className="systems-section">
-      <div className="section-head" data-reveal>
-        <p className="kicker">Signature Systems</p>
-        <h2>Research systems with product-level clarity.</h2>
-      </div>
-      <div className="systems-list">
-        {profile.signatureSystems.map(item => (
-          <article className="system-card" key={item.name} data-reveal>
-            <div className="system-visual"><img src={item.visual} alt={item.name} /></div>
-            <div className="system-content">
-              <p className="system-tag">{item.tag}</p>
-              <h3>{item.name}</h3>
-              <p>{item.description}</p>
-              <div className="pill-row">{item.bullets.map(b => <span key={b}>{b}</span>)}</div>
-            </div>
-          </article>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-function ResearchList() {
-  const [filter, setFilter] = useState("Selected");
-  const filters = ["Selected", "All", "Journal", "Conference"];
-  const items = profile.publications.filter(p => {
-    if (filter === "Selected") return p.selected;
-    if (filter === "All") return true;
-    return p.type === filter;
-  });
-
-  return (
-    <Section id="research" tone="dark" className="research-section">
-      <div className="archive-head" data-reveal>
-        <div>
-          <p className="kicker">Research Output</p>
-          <h2>Selected work first. Full archive on demand.</h2>
+    <section className="dark-surface focus-section" id="about">
+      <div className="container">
+        <div className="section-head split dark-head">
+          <div>
+            <p className="section-kicker">Core Focus</p>
+            <h2>Real systems first. AI that respects battery behavior.</h2>
+          </div>
+          <p>
+            The work sits where BMS constraints, high-voltage operation,
+            battery degradation, and AI-driven diagnostics meet.
+          </p>
         </div>
-        <div className="filter-row">
-          {filters.map(f => (
-            <button className={filter === f ? "active" : ""} key={f} onClick={() => setFilter(f)}>
-              {f}
-            </button>
+
+        <div className="focus-grid">
+          {profile.focusAreas.map((item) => (
+            <article className="focus-card" key={item.title}>
+              <div className="focus-image-wrap">
+                <img src={item.image} alt={item.title} />
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
           ))}
         </div>
       </div>
-      <div className="research-list">
-        {items.map(item => (
-          <a className="research-item" href={item.href} key={item.title} target={item.href === "#" ? "_self" : "_blank"} rel="noreferrer" data-reveal>
-            <div className="research-year">{item.year}</div>
-            <div className="research-body">
-              <div className="research-meta">
-                <span>{item.type}</span>
-                <span>{item.role}</span>
-              </div>
-              <h3>{item.title}</h3>
-              <p>{item.venue}</p>
-              <div className="topic-line">{item.topic}</div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </Section>
+    </section>
   );
 }
 
-function Patents() {
-  const [showAll, setShowAll] = useState(false);
-  const items = showAll ? profile.patents : profile.patents.filter(p => p.selected);
-
+function ArchiveList({ id, title, subtitle, items, kind }) {
   return (
-    <Section id="patents" tone="light" className="patents-section">
-      <div className="archive-head" data-reveal>
+    <div className="archive-column" id={id}>
+      <div className="archive-head">
         <div>
-          <p className="kicker">Patents</p>
-          <h2>Diagnostics, control, and degradation intelligence.</h2>
+          <span className={`archive-dot ${kind}`} />
+          <h2>{title}</h2>
         </div>
-        <button className="archive-button" onClick={() => setShowAll(!showAll)}>
-          {showAll ? "Show selected" : "View full patent archive"}
-        </button>
+        <p>{subtitle}</p>
       </div>
-      <div className="patent-grid">
-        {items.map(item => (
-          <a className="patent-card" href={item.href} key={`${item.number}-${item.title}`} target={item.href === "#" ? "_self" : "_blank"} rel="noreferrer" data-reveal>
-            <div className="patent-top">
-              <span>{item.status}</span>
-              <strong>{item.year}</strong>
+
+      <div className="archive-list">
+        {items.map((item) => (
+          <a
+            className="archive-item"
+            href={item.href}
+            target={item.href === "#" ? "_self" : "_blank"}
+            rel="noreferrer"
+            key={`${item.title}-${item.number || item.venue}`}
+          >
+            <div className={`archive-icon ${kind}`}>
+              {kind === "publication" ? "⌁" : "◈"}
             </div>
-            <h3>{item.title}</h3>
-            <p>{item.number}</p>
-            <div className="topic-line">{item.topic}</div>
+            <div className="archive-content">
+              <div className="archive-badges">
+                {item.type ? <span>{item.type}</span> : null}
+                {item.role ? <span>{item.role}</span> : null}
+                {item.status ? <span>{item.status}</span> : null}
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.venue || item.number}</p>
+              <small>{item.topic}</small>
+            </div>
+            <strong className="archive-year">{item.year}</strong>
           </a>
         ))}
       </div>
-    </Section>
+    </div>
+  );
+}
+
+function Lists() {
+  return (
+    <section className="dark-surface lists-section">
+      <div className="container lists-grid">
+        <ArchiveList
+          id="publications"
+          title="Research Output"
+          subtitle="All listed journal and conference outputs are directly visible. No broken toggle, no hidden archive."
+          items={profile.publications}
+          kind="publication"
+        />
+
+        <ArchiveList
+          id="patents"
+          title="Patents"
+          subtitle="All listed granted and published patent items are directly visible for credibility and transparency."
+          items={profile.patents}
+          kind="patent"
+        />
+      </div>
+    </section>
   );
 }
 
 function Footer() {
   return (
-    <footer className="footer">
-      <span>© {new Date().getFullYear()} {profile.name}</span>
-      <span>Apple-inspired. Research-focused. Built with React + Vite.</span>
+    <footer className="footer" id="contact">
+      <div className="container footer-inner">
+        <div>
+          <strong>{profile.name}</strong>
+          <span>AI × BMS × Intelligence</span>
+        </div>
+        <div className="footer-center">
+          <span>{profile.email}</span>
+          <span>{profile.location}</span>
+        </div>
+        <div className="footer-right">
+          <span>© 2025 {profile.name}. All rights reserved.</span>
+        </div>
+      </div>
     </footer>
   );
 }
 
 export default function App() {
-  useReveal();
   return (
     <>
       <Header />
-      <main>
-        <Hero />
-        <Presence />
-        <ProofSnapshot />
-        <EducationFusion />
-        <About />
-        <KeynoteStatement item={profile.keynoteLines[0]} index={0} tone="light" />
-        <Focus />
-        <KeynoteStatement item={profile.keynoteLines[1]} index={1} tone="dark" />
-        <Systems />
-        <KeynoteStatement item={profile.keynoteLines[2]} index={2} tone="light" />
-        <ResearchList />
-        <Patents />
-      </main>
+      <Hero />
+      <Presence />
+      <Evidence />
+      <Education />
+      <Focus />
+      <Lists />
       <Footer />
     </>
   );
