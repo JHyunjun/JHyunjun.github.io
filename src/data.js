@@ -4,7 +4,7 @@ export const profile = {
   headline: "AI · BMS · Intelligence",
   title: "Battery Intelligence Research Engineer",
   subtitle:
-    "Designing predictive safety, degradation, and high-voltage battery intelligence for real-world mobility systems.",
+    "High-voltage battery diagnostics, aging prediction, and AI-based battery modeling for real-world mobility systems.",
   identity:
     "BMS SW/Algorithm Senior Research Engineer · High-Voltage Battery Fault Diagnosis & Aging · PhD Candidate",
   location: "Korea",
@@ -17,28 +17,89 @@ export const profile = {
   heroLinks: [
     {
       label: "Tistory",
-      caption: "1M+ views. Battery AI, BMS, deep learning, paper reviews, and engineering notes.",
+      caption: "1M+ technical readers across battery AI, BMS, deep learning, paper reviews, and engineering notes.",
       href: "https://limitsinx.tistory.com",
       metric: "1M+ views"
     },
     {
       label: "LinkedIn",
-      caption: "Professional identity across BMS algorithms, battery modeling, AI, diagnostics, and aging research.",
+      caption: "Professional profile across BMS algorithms, fault diagnosis, aging research, AI, and battery modeling.",
       href: "https://kr.linkedin.com/in/hyunjun-jang-2824a61ba/en",
-      metric: "1K+ network"
+      metric: "BMS / AI profile"
     },
     {
       label: "GitHub",
-      caption: "Research implementation, generative models, anomaly detection, PINN, and deep learning code.",
+      caption: "Research implementation archive for generative modeling, anomaly detection, PINN, and engineering code.",
       href: "https://github.com/JHyunjun",
       metric: "Code archive"
     },
   ],
 
+  credibility: [
+    {
+      value: "7.5+",
+      label: "Years in BMS R&D",
+      detail: "Battery system algorithms, diagnostics, and field-oriented modeling."
+    },
+    {
+      value: "SNU",
+      label: "PhD Candidate",
+      detail: "Chemical & Biological Engineering · battery AI research.",
+      badge: "/assets/snu-badge.svg"
+    },
+    {
+      value: "1M+",
+      label: "Technical Blog Views",
+      detail: "Battery, AI, BMS, and engineering writing for public readers."
+    },
+    {
+      value: "IP + Papers",
+      label: "Research Output",
+      detail: "Battery diagnostics, degradation, GAN/RL modeling, EIS, ICA, and safety."
+    }
+  ],
+
+  education: [
+    {
+      school: "Seoul National University",
+      short: "SNU",
+      degree: "Doctor of Philosophy · PhD Candidate",
+      department: "Chemical and Biological Engineering",
+      meaning: "Battery intelligence grounded in electrochemistry, degradation, and physical systems.",
+      badge: "/assets/snu-badge.svg"
+    },
+    {
+      school: "Yonsei University",
+      short: "Yonsei",
+      degree: "Master of Engineering",
+      department: "Computer Engineering",
+      meaning: "AI, software, data, and algorithmic foundation for battery system intelligence.",
+      badge: "/assets/yonsei-badge.svg"
+    }
+  ],
+
+  evidenceSnapshot: [
+    {
+      title: "Battery Diagnostics Patents",
+      body: "Granted and published IP across battery abnormality diagnosis, SOH modeling, aging-aware control, and vehicle battery management.",
+      href: "#patents"
+    },
+    {
+      title: "Journal & Conference Research",
+      body: "Applied Energy, IEEE ITEC, KSAE, JSAE, EVS37, and battery diagnostics / degradation / generative modeling work.",
+      href: "#research"
+    },
+    {
+      title: "Field-Oriented AI Modeling",
+      body: "A research identity grounded in BMS constraints, high-voltage battery systems, fault diagnosis, real mobility operation, and a dual chemical-engineering / computer-engineering foundation.",
+      href: "#systems"
+    }
+  ],
+
   overview:
-    "I work at the intersection of battery systems, BMS algorithms, and AI-based modeling. My focus is to move battery intelligence beyond state estimation, toward predictive safety, degradation understanding, and field-valid system intelligence.",
+    "I work at the intersection of high-voltage battery systems, BMS algorithms, and AI-based modeling. My focus is to move battery intelligence beyond state estimation, toward predictive safety, degradation understanding, and field-valid system intelligence that can survive real operating conditions.",
   vision:
-    "The long-term goal is to build AI-centered battery physical intelligence: models that do not only fit data, but help explain degradation pathways, operating behavior, safety signatures, and time-series variability under real-world constraints.",
+    "The long-term goal is to build AI-centered battery physical intelligence: models that do not only fit data, but help explain degradation pathways, operating behavior, safety signatures, abnormality precursors, and time-series variability under real-world constraints.",
 
   expertise: [
     { value: "AI", label: "Generative & predictive modeling" },

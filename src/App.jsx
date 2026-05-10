@@ -22,6 +22,8 @@ function Header() {
     <header className="header">
       <a className="brand" href="#top" aria-label="Go to top">HJ</a>
       <nav className="nav">
+        <a href="#proof">Proof</a>
+        <a href="#education">Education</a>
         <a href="#about">About</a>
         <a href="#focus">Focus</a>
         <a href="#systems">Systems</a>
@@ -82,6 +84,23 @@ function HeroVisual() {
   );
 }
 
+function CredibilityStrip() {
+  return (
+    <div className="credibility-strip" data-reveal>
+      {profile.credibility.map((item) => (
+        <div className="credibility-card" key={item.label}>
+          <div className="credibility-top">
+            <strong>{item.value}</strong>
+            {item.badge ? <img src={item.badge} alt={`${item.value} badge`} /> : null}
+          </div>
+          <span>{item.label}</span>
+          <p>{item.detail}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section className="section hero" id="top">
@@ -89,9 +108,66 @@ function Hero() {
         <p className="kicker" data-reveal>{profile.koreanName} · {profile.title}</p>
         <h1 data-reveal>AI.<br />BMS.<br />Intelligence.</h1>
         <p className="hero-subtitle" data-reveal>{profile.subtitle}</p>
+        <CredibilityStrip />
         <HeroLinkCards />
       </div>
       <HeroVisual />
+    </section>
+  );
+}
+
+function ProofSnapshot() {
+  return (
+    <section className="section proof-snapshot" id="proof">
+      <div className="section-head proof-title" data-reveal>
+        <p className="kicker">Evidence Snapshot</p>
+        <h2>Not a claim. A body of work.</h2>
+        <p>
+          The page is designed to communicate a simple signal immediately:
+          field BMS experience, AI research direction, technical writing impact,
+          and verified battery diagnostics output.
+        </p>
+      </div>
+      <div className="evidence-grid">
+        {profile.evidenceSnapshot.map((item) => (
+          <a className="evidence-card" href={item.href} key={item.title} data-reveal>
+            <div className="evidence-icon" aria-hidden="true" />
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+            <span>View evidence →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function EducationStack() {
+  return (
+    <section className="section education-section" id="education">
+      <div className="section-head education-head" data-reveal>
+        <p className="kicker">Education</p>
+        <h2>Electrochemistry meets computer engineering.</h2>
+        <p>
+          The academic background is intentionally cross-disciplinary:
+          battery systems and chemical engineering on one side,
+          AI, software, and algorithmic thinking on the other.
+        </p>
+      </div>
+      <div className="education-grid">
+        {profile.education.map((item) => (
+          <article className="education-card" key={item.school} data-reveal>
+            <img src={item.badge} alt={`${item.short} badge`} />
+            <div>
+              <span>{item.short}</span>
+              <h3>{item.school}</h3>
+              <p className="education-degree">{item.degree}</p>
+              <p className="education-dept">{item.department}</p>
+              <p className="education-meaning">{item.meaning}</p>
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
@@ -164,7 +240,7 @@ function Systems() {
     <section className="section" id="systems">
       <div className="section-head" data-reveal>
         <p className="kicker">Signature Systems</p>
-        <h2>Projects shown like products. Framed like a keynote.</h2>
+        <h2>Research systems with product-level clarity.</h2>
       </div>
       <div className="systems-list">
         {profile.signatureSystems.map((item) => (
@@ -193,7 +269,7 @@ function ResearchList() {
       <div className="section-head research-head" data-reveal>
         <div>
           <p className="kicker">Research Output</p>
-          <h2>Publications & presentations.</h2>
+          <h2>Publications, presentations, and technical proof.</h2>
         </div>
         <div className="filter-row">
           {filters.map((f) => (
@@ -228,7 +304,7 @@ function Patents() {
     <section className="section" id="patents">
       <div className="section-head" data-reveal>
         <p className="kicker">Patents</p>
-        <h2>Battery diagnostics, control, and degradation intelligence IP.</h2>
+        <h2>Battery diagnostics, control, and degradation intelligence.</h2>
       </div>
       <div className="patent-grid">
         {profile.patents.map((item) => (
@@ -282,6 +358,8 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <ProofSnapshot />
+        <EducationStack />
         <About />
         <Focus />
         <Statements />

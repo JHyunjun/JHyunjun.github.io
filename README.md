@@ -1,15 +1,17 @@
-# Hyunjun Jang Homepage V3
+# Hyunjun Jang Homepage V5
 
-Updated Apple-inspired research homepage.
+Education-enhanced Apple-inspired research homepage.
 
-## V3 updates
+## V5 updates
 
-- Identity text no longer exposes company name in the Identity block.
-- First-screen Tistory card includes 1M+ views.
-- CMS-GAN wording is softened into broader GAN/RL-based battery modeling.
-- Research section added with journal/conference output.
-- Patent section added with granted/published/application items.
-- Dynamic SVG visuals and Apple-like dark premium design retained.
+- Added SNU mini badge beside the SNU credibility card.
+- Added Education section:
+  - Seoul National University · PhD Candidate · Chemical and Biological Engineering
+  - Yonsei University · M.Eng · Computer Engineering
+- Strengthened cross-disciplinary positioning:
+  - electrochemistry / battery systems
+  - AI / software / algorithmic engineering
+- Kept V4 authority metrics, research, patent, and evidence sections.
 
 ## Deploy update
 
@@ -17,8 +19,6 @@ Copy all files into the existing `JHyunjun.github.io` local folder, overwrite, t
 
 ```bash
 git add .
-git commit -m "Add research and patent portfolio"
+git commit -m "Add education badges and interdisciplinary positioning"
 git push
 ```
-
-GitHub Actions will rebuild the site automatically.
