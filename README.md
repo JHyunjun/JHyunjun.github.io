@@ -1,35 +1,24 @@
-# Hyunjun Jang Homepage V2
+# Hyunjun Jang Homepage V3
 
-A more cinematic Apple-inspired version with:
-- stronger AI · BMS · Intelligence positioning
-- first-screen Tistory / LinkedIn / GitHub link cards
-- dynamic premium hero stage
-- custom SVG visuals included locally
-- React + Vite + GitHub Pages deployment
+Updated Apple-inspired research homepage.
 
-## Edit profile text
-Update:
+## V3 updates
 
-```text
-src/data.js
-```
+- Identity text no longer exposes company name in the Identity block.
+- First-screen Tistory card includes 1M+ views.
+- CMS-GAN wording is softened into broader GAN/RL-based battery modeling.
+- Research section added with journal/conference output.
+- Patent section added with granted/published/application items.
+- Dynamic SVG visuals and Apple-like dark premium design retained.
 
-## Deploy
-For personal site repo:
+## Deploy update
 
-```text
-JHyunjun.github.io
-```
+Copy all files into the existing `JHyunjun.github.io` local folder, overwrite, then run:
 
-Push to `main`, then in GitHub:
-
-```text
-Settings → Pages → Source → GitHub Actions
-```
-
-## Update after editing
 ```bash
 git add .
-git commit -m "Update homepage v2"
+git commit -m "Add research and patent portfolio"
 git push
 ```
+
+GitHub Actions will rebuild the site automatically.

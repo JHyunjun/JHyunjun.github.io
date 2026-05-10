@@ -492,3 +492,177 @@ h3 {
     transform: none;
   }
 }
+
+
+.mini-metric {
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 999px;
+  color: rgba(245,245,247,0.78);
+  background: rgba(255,255,255,0.045);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.research-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: none;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-row button {
+  appearance: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: rgba(245,245,247,0.72);
+  background: rgba(255,255,255,0.045);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.filter-row button:hover,
+.filter-row button.active {
+  color: #050505;
+  background: var(--white);
+  border-color: var(--white);
+}
+
+.research-list {
+  display: grid;
+  gap: 12px;
+}
+
+.research-item {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: rgba(255,255,255,0.045);
+  transition: 220ms ease;
+}
+
+.research-item:hover,
+.patent-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,0.24);
+}
+
+.research-year {
+  color: rgba(245,245,247,0.92);
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.07em;
+}
+
+.research-body h3,
+.patent-card h3 {
+  margin-top: 10px;
+  font-size: clamp(21px, 2.5vw, 32px);
+  line-height: 1.08;
+}
+
+.research-body p,
+.patent-card p {
+  margin: 12px 0 0;
+  color: rgba(245,245,247,0.66);
+  font-size: 16px;
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+}
+
+.research-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.research-meta span {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: rgba(245,245,247,0.68);
+  background: rgba(255,255,255,0.035);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.topic-line {
+  margin-top: 18px;
+  color: rgba(245,245,247,0.56);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.patent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.patent-card {
+  min-height: 270px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(255,255,255,0.08), transparent 34%),
+    rgba(255,255,255,0.045);
+  transition: 220ms ease;
+}
+
+.patent-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.patent-top span {
+  color: rgba(245,245,247,0.62);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.patent-top strong {
+  color: var(--white);
+  font-size: 18px;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 980px) {
+  .research-head {
+    display: grid;
+    align-items: start;
+  }
+
+  .research-item {
+    grid-template-columns: 1fr;
+  }
+
+  .patent-grid {
+    grid-template-columns: 1fr;
+  }
+}
