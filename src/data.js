@@ -1,102 +1,112 @@
 export const profile = {
   name: "Hyunjun Jang",
   koreanName: "장현준",
+  headline: "AI · BMS · Intelligence",
   title: "Battery Intelligence Research Engineer",
   subtitle:
-    "Building predictive battery safety and degradation intelligence for real-world electrified mobility.",
-  affiliation: "Hyundai Motor Company · BMS Algorithm Engineer · PhD Candidate",
-  location: "Seoul / Korea",
-  email: "limitsinx@naver.com",
+    "Designing predictive safety, degradation, and high-voltage battery intelligence for real-world mobility systems.",
+  identity:
+    "Hyundai Motor Company · BMS Algorithm Engineer · PhD Candidate",
+  location: "Korea",
+  email: "JHyunjun@users.noreply.github.com",
   github: "https://github.com/JHyunjun",
   blog: "https://limitsinx.tistory.com",
-  linkedin: "https://www.linkedin.com/",
-  scholar: "",
+  linkedin: "https://kr.linkedin.com/in/hyunjun-jang-2824a61ba/en",
+  scholar: "#",
 
-  heroKeywords: [
-    "Battery Intelligence",
-    "AI-based Battery Modeling",
-    "BMS Safety",
-    "Degradation Prediction",
+  heroLinks: [
+    {
+      label: "Tistory",
+      caption: "Engineering notes, paper reviews, and technical writing.",
+      href: "https://limitsinx.tistory.com",
+    },
+    {
+      label: "LinkedIn",
+      caption: "Professional identity, industry focus, and research direction.",
+      href: "https://kr.linkedin.com/in/hyunjun-jang-2824a61ba/en",
+    },
+    {
+      label: "GitHub",
+      caption: "Projects, code, and research implementation artifacts.",
+      href: "https://github.com/JHyunjun",
+    },
   ],
 
-  about:
-    "I work at the intersection of battery systems, BMS algorithms, and artificial intelligence. My focus is not only to estimate battery states, but to build models that can understand degradation, safety, impedance, and time-series behavior under real operating conditions.",
-
+  overview:
+    "I work at the intersection of battery systems, BMS algorithms, and AI-based modeling. My focus is to move battery intelligence beyond simple estimation, toward predictive safety, degradation understanding, and field-valid system intelligence.",
   vision:
-    "My long-term research direction is to move battery modeling from descriptive prediction toward mechanistic and explanatory intelligence. I am interested in AI-centered battery physical models that combine field data, electrochemical insight, generative modeling, and system-level validation.",
+    "The long-term goal is to build AI-centered battery physical intelligence: models that do not only fit data, but help explain degradation pathways, operating behavior, safety signatures, and time-series variability under real-world constraints.",
 
-  metrics: [
-    { value: "7.5+", label: "Years in BMS R&D" },
-    { value: "AI × BMS", label: "Core Research Axis" },
-    { value: "CMS-GAN", label: "Representative Project" },
-    { value: "Field Data", label: "Validation Mindset" },
+  expertise: [
+    {
+      value: "AI",
+      label: "Generative & predictive modeling",
+    },
+    {
+      value: "BMS",
+      label: "Control, diagnosis, and estimation",
+    },
+    {
+      value: "INT",
+      label: "Field-valid intelligence architecture",
+    },
+    {
+      value: "HV",
+      label: "High-voltage battery systems",
+    }
   ],
 
-  researchAreas: [
+  focusAreas: [
     {
       title: "Predictive Battery Safety",
       body:
-        "Fault diagnosis, anomaly detection, and safety-oriented BMS algorithms for electrified vehicle battery systems.",
+        "Algorithms and intelligence systems for anomaly detection, hazard prediction, and robust battery safety interpretation.",
+      image: "/assets/vision-battery.svg"
     },
     {
       title: "Battery Degradation Intelligence",
       body:
-        "SOH, RUL, aging, and degradation modeling using battery time-series data and system-level validation.",
+        "SOH, RUL, and aging-aware modeling with time-series understanding, field data grounding, and system deployment in mind.",
+      image: "/assets/diag-wave.svg"
     },
     {
-      title: "Generative Battery Modeling",
+      title: "AI-Centered Battery Modeling",
       body:
-        "High-fidelity synthetic battery time-series generation using WGAN-GP, CMS-GAN, teacher guidance, and consistency-aware losses.",
-    },
-    {
-      title: "Impedance & Frequency Diagnostics",
-      body:
-        "EIS, virtual impedance, frequency-resolved diagnostics, and signal-level interpretation for battery health and fault detection.",
-    },
+        "Generative and predictive models that push battery analysis from signal fitting to physically meaningful intelligence.",
+      image: "/assets/network-intelligence.svg"
+    }
   ],
 
-  projects: [
+  signatureSystems: [
     {
       name: "CMS-GAN",
-      tag: "Generative AI for Battery Time-Series",
+      tag: "Generative Battery Intelligence",
       description:
-        "Conditional Mode Seeking GAN for diverse condition-conditioned battery signal generation. Designed for realistic voltage/current behavior under battery operating constraints.",
-      highlights: ["WGAN-GP", "Conditional mode diversity", "Teacher guidance", "Soft-DTW / MMD / correlation validation"],
+        "Conditional Mode Seeking GAN for diverse, condition-aware battery time-series generation with stronger realism and controllable diversity.",
+      bullets: ["WGAN-GP", "Mode diversity", "Teacher guidance", "Time-series validation"],
+      visual: "/assets/project-cmsgan.svg"
     },
     {
       name: "Predictive Battery Safety & Degradation Intelligence",
-      tag: "BMS Intelligence Platform",
+      tag: "AI × BMS",
       description:
-        "A research direction that integrates onboard BMS algorithms, cloud-scale fleet intelligence, safety diagnostics, and degradation estimation.",
-      highlights: ["SOC/SOH/RUL", "Safety diagnostics", "Fleet data", "Physics-data fusion"],
+        "A system-level research direction combining onboard BMS logic, cloud-scale intelligence, fleet signals, and safety-first degradation understanding.",
+      bullets: ["SOC / SOH / RUL", "Safety diagnostics", "Fleet-scale data", "Physics-data fusion"],
+      visual: "/assets/project-safety.svg"
     },
     {
-      name: "System-Level Frequency-Resolved Diagnostics",
-      tag: "Battery Fault Detection",
+      name: "Frequency-Resolved Diagnostics",
+      tag: "Diagnostic Systems",
       description:
-        "Frequency-resolved diagnostic methodology for lithium-ion battery fault detection using system-level signals and impedance-inspired interpretation.",
-      highlights: ["Low-frequency diagnostics", "Mahalanobis distance", "Per-frequency contribution", "Cross-system validation"],
-    },
+        "Frequency-domain and impedance-inspired methodology for fault diagnosis, health inference, and explainable battery monitoring.",
+      bullets: ["Impedance insight", "Signal interpretation", "Anomaly separation", "Explainability"],
+      visual: "/assets/project-frequency.svg"
+    }
   ],
 
-  writings: [
-    {
-      title: "Engineering Insight",
-      body:
-        "Technical blog on battery engineering, AI/deep learning, paper reviews, and development environment notes.",
-      href: "https://limitsinx.tistory.com",
-    },
-    {
-      title: "Research Notes",
-      body:
-        "Concise notes on AI for batteries, BMS algorithms, impedance analysis, generative modeling, and model validation.",
-      href: "#research",
-    },
-  ],
-
-  patents: [
-    "Battery SOH model and real-vehicle big-data based estimation",
-    "Vehicle battery control apparatus and method",
-    "Battery safety and diagnostic algorithm portfolio",
-  ],
+  statements: [
+    "Not just state estimation.",
+    "Battery intelligence with predictive depth.",
+    "AI systems designed for field reality.",
+  ]
 };

@@ -1,110 +1,131 @@
 import { useEffect } from "react";
 import { profile } from "./data.js";
 
-function useRevealAnimation() {
+function useReveal() {
   useEffect(() => {
     const targets = document.querySelectorAll("[data-reveal]");
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            entry.target.classList.add("visible");
           }
         });
       },
-      { threshold: 0.18 }
+      { threshold: 0.16 }
     );
 
-    targets.forEach(target => observer.observe(target));
-    return () => observer.disconnect();
+    targets.forEach((el) => io.observe(el));
+    return () => io.disconnect();
   }, []);
 }
 
 function Header() {
-  const navItems = [
-    ["About", "#about"],
-    ["Research", "#research"],
-    ["Projects", "#projects"],
-    ["Writing", "#writing"],
-    ["Contact", "#contact"],
-  ];
-
   return (
-    <header className="site-header">
-      <a className="brand" href="#top" aria-label="Go to top">
-        HJ
-      </a>
-      <nav className="nav" aria-label="Primary navigation">
-        {navItems.map(([label, href]) => (
-          <a key={label} href={href}>
-            {label}
-          </a>
-        ))}
+    <header className="header">
+      <a className="brand" href="#top" aria-label="Go to top">HJ</a>
+      <nav className="nav">
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#systems">Systems</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
   );
 }
 
+function HeroLinkCards() {
+  return (
+    <div className="hero-links" data-reveal>
+      {profile.heroLinks.map((item) => (
+        <a className="hero-link-card" href={item.href} key={item.label} target="_blank" rel="noreferrer">
+          <div className="hero-link-top">
+            <span className="hero-link-label">{item.label}</span>
+            <span className="hero-link-arrow">↗</span>
+          </div>
+          <p>{item.caption}</p>
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function HeroVisual() {
+  return (
+    <div className="hero-visual" data-reveal>
+      <div className="hero-stage">
+        <div className="glow-ring ring-one" />
+        <div className="glow-ring ring-two" />
+        <div className="floating-card card-a">
+          <img src="/assets/vision-battery.svg" alt="Battery intelligence illustration" />
+          <div>
+            <span>AI</span>
+            <strong>Battery Intelligence</strong>
+          </div>
+        </div>
+        <div className="floating-card card-b">
+          <img src="/assets/network-intelligence.svg" alt="Intelligence network illustration" />
+          <div>
+            <span>BMS</span>
+            <strong>Predictive Systems</strong>
+          </div>
+        </div>
+        <div className="floating-card card-c">
+          <img src="/assets/diag-wave.svg" alt="Diagnostics illustration" />
+          <div>
+            <span>INT</span>
+            <strong>Signal-Level Diagnostics</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   return (
-    <section id="top" className="hero section">
-      <div className="hero-bg" aria-hidden="true">
-        <div className="orb orb-one" />
-        <div className="orb orb-two" />
-        <div className="grid-glow" />
+    <section className="section hero" id="top">
+      <div className="hero-copy-block">
+        <p className="kicker" data-reveal>{profile.koreanName} · {profile.title}</p>
+        <h1 data-reveal>
+          AI.
+          <br />
+          BMS.
+          <br />
+          Intelligence.
+        </h1>
+        <p className="hero-subtitle" data-reveal>{profile.subtitle}</p>
+        <HeroLinkCards />
       </div>
-
-      <div className="eyebrow" data-reveal>
-        {profile.koreanName} · {profile.title}
-      </div>
-
-      <h1 className="hero-title" data-reveal>
-        Battery Intelligence,
-        <br />
-        engineered for the real world.
-      </h1>
-
-      <p className="hero-copy" data-reveal>
-        {profile.subtitle}
-      </p>
-
-      <div className="hero-actions" data-reveal>
-        <a className="button primary" href="#projects">
-          View Projects
-        </a>
-        <a className="button secondary" href={profile.blog} target="_blank" rel="noreferrer">
-          Read Blog
-        </a>
-      </div>
-
-      <div className="keyword-strip" data-reveal>
-        {profile.heroKeywords.map(keyword => (
-          <span key={keyword}>{keyword}</span>
-        ))}
-      </div>
+      <HeroVisual />
     </section>
   );
 }
 
 function About() {
   return (
-    <section id="about" className="section split">
-      <div data-reveal>
-        <p className="section-kicker">About</p>
-        <h2>From BMS algorithms to AI-centered battery modeling.</h2>
+    <section className="section about" id="about">
+      <div className="section-head" data-reveal>
+        <p className="kicker">About</p>
+        <h2>Built for premium technical credibility.</h2>
       </div>
-
-      <div className="prose" data-reveal>
-        <p>{profile.about}</p>
-        <p>{profile.vision}</p>
-        <div className="identity-card">
+      <div className="about-grid">
+        <div className="about-panel" data-reveal>
+          <p>{profile.overview}</p>
+          <p>{profile.vision}</p>
+        </div>
+        <div className="identity-panel" data-reveal>
           <div>
             <span>Name</span>
             <strong>{profile.name}</strong>
           </div>
           <div>
-            <span>Affiliation</span>
-            <strong>{profile.affiliation}</strong>
+            <span>Identity</span>
+            <strong>{profile.identity}</strong>
+          </div>
+          <div>
+            <span>Focus</span>
+            <strong>{profile.headline}</strong>
           </div>
           <div>
             <span>Location</span>
@@ -112,114 +133,74 @@ function About() {
           </div>
         </div>
       </div>
-    </section>
-  );
-}
-
-function Metrics() {
-  return (
-    <section className="metrics section" aria-label="Highlights">
-      {profile.metrics.map(item => (
-        <div className="metric-card" key={item.label} data-reveal>
-          <strong>{item.value}</strong>
-          <span>{item.label}</span>
-        </div>
-      ))}
-    </section>
-  );
-}
-
-function Research() {
-  return (
-    <section id="research" className="section">
-      <div className="section-heading" data-reveal>
-        <p className="section-kicker">Research</p>
-        <h2>Predictive Battery Safety & Degradation Intelligence.</h2>
-        <p>
-          A focused research map across battery safety, aging, generative modeling,
-          and frequency-domain diagnostics.
-        </p>
-      </div>
-
-      <div className="card-grid">
-        {profile.researchAreas.map((area, index) => (
-          <article className="research-card" key={area.title} data-reveal>
-            <span className="card-index">{String(index + 1).padStart(2, "0")}</span>
-            <h3>{area.title}</h3>
-            <p>{area.body}</p>
-          </article>
+      <div className="expertise-strip">
+        {profile.expertise.map((item) => (
+          <div className="expertise-card" key={item.label} data-reveal>
+            <strong>{item.value}</strong>
+            <span>{item.label}</span>
+          </div>
         ))}
       </div>
     </section>
   );
 }
 
-function Projects() {
+function Focus() {
   return (
-    <section id="projects" className="section">
-      <div className="section-heading" data-reveal>
-        <p className="section-kicker">Selected Work</p>
-        <h2>Projects presented like products, validated like research.</h2>
+    <section className="section" id="focus">
+      <div className="section-head" data-reveal>
+        <p className="kicker">Core Focus</p>
+        <h2>Three pillars of AI-centered battery expertise.</h2>
       </div>
-
-      <div className="project-list">
-        {profile.projects.map(project => (
-          <article className="project-card" key={project.name} data-reveal>
-            <div className="project-visual" aria-hidden="true">
-              <div className="signal-line" />
-              <div className="signal-line delayed" />
-              <div className="battery-chip">
-                <span />
-                <span />
-                <span />
-              </div>
+      <div className="focus-grid">
+        {profile.focusAreas.map((item) => (
+          <article className="focus-card" key={item.title} data-reveal>
+            <div className="focus-image-wrap">
+              <img src={item.image} alt={item.title} />
             </div>
-
-            <div className="project-content">
-              <p className="project-tag">{project.tag}</p>
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <div className="pill-row">
-                {project.highlights.map(item => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Writing() {
-  return (
-    <section id="writing" className="section split">
-      <div data-reveal>
-        <p className="section-kicker">Writing</p>
-        <h2>Notes, reviews, and engineering essays.</h2>
-      </div>
-
-      <div className="writing-stack" data-reveal>
-        {profile.writings.map(item => (
-          <a className="writing-card" href={item.href} key={item.title} target={item.href.startsWith("http") ? "_blank" : "_self"} rel="noreferrer">
-            <span>{item.title}</span>
+            <h3>{item.title}</h3>
             <p>{item.body}</p>
-          </a>
+          </article>
         ))}
       </div>
     </section>
   );
 }
 
-function Patents() {
+function Statements() {
   return (
-    <section className="section dark-panel" data-reveal>
-      <p className="section-kicker">IP & Applied Research</p>
-      <h2>Applied battery algorithm portfolio.</h2>
-      <div className="patent-list">
-        {profile.patents.map(item => (
-          <div key={item}>{item}</div>
+    <section className="section statement-band">
+      <div className="statement-panel" data-reveal>
+        {profile.statements.map((line) => (
+          <div className="statement-line" key={line}>{line}</div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Systems() {
+  return (
+    <section className="section" id="systems">
+      <div className="section-head" data-reveal>
+        <p className="kicker">Signature Systems</p>
+        <h2>Projects shown like products. Framed like a keynote.</h2>
+      </div>
+      <div className="systems-list">
+        {profile.signatureSystems.map((item) => (
+          <article className="system-card" key={item.name} data-reveal>
+            <div className="system-visual">
+              <img src={item.visual} alt={item.name} />
+            </div>
+            <div className="system-content">
+              <p className="system-tag">{item.tag}</p>
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+              <div className="pill-row">
+                {item.bullets.map((b) => <span key={b}>{b}</span>)}
+              </div>
+            </div>
+          </article>
         ))}
       </div>
     </section>
@@ -228,17 +209,18 @@ function Patents() {
 
 function Contact() {
   return (
-    <section id="contact" className="section contact">
-      <div data-reveal>
-        <p className="section-kicker">Contact</p>
-        <h2>Let the work speak first. Then connect.</h2>
+    <section className="section contact" id="contact">
+      <div className="section-head" data-reveal>
+        <p className="kicker">Connect</p>
+        <h2>Primary public presence.</h2>
       </div>
-
-      <div className="contact-links" data-reveal>
-        <a href={`mailto:${profile.email}`}>Email</a>
-        <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
-        <a href={profile.blog} target="_blank" rel="noreferrer">Blog</a>
-        <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+      <div className="contact-grid" data-reveal>
+        {profile.heroLinks.map((item) => (
+          <a key={item.label} className="contact-card" href={item.href} target="_blank" rel="noreferrer">
+            <strong>{item.label}</strong>
+            <span>{item.caption}</span>
+          </a>
+        ))}
       </div>
     </section>
   );
@@ -248,13 +230,13 @@ function Footer() {
   return (
     <footer className="footer">
       <span>© {new Date().getFullYear()} {profile.name}</span>
-      <span>Built with React, Vite, and GitHub Pages.</span>
+      <span>Apple-inspired. Research-focused. Built with React + Vite.</span>
     </footer>
   );
 }
 
 export default function App() {
-  useRevealAnimation();
+  useReveal();
 
   return (
     <>
@@ -262,11 +244,9 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Metrics />
-        <Research />
-        <Projects />
-        <Writing />
-        <Patents />
+        <Focus />
+        <Statements />
+        <Systems />
         <Contact />
       </main>
       <Footer />

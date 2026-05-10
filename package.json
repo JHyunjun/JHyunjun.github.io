@@ -1,7 +1,7 @@
 {
-  "name": "hyunjun-research-homepage",
+  "name": "hyunjun-research-homepage-v2",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -11,9 +11,7 @@
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.0",
     "vite": "^7.0.0",
-    "typescript": "^5.8.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
-  },
-  "devDependencies": {}
+  }
 }
