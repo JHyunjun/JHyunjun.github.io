@@ -23,9 +23,9 @@ export const profile = {
     },
     {
       label: "LinkedIn",
-      caption: "Professional profile across BMS algorithms, fault diagnosis, aging research, AI, and battery modeling.",
+      caption: "Professional network and profile across BMS algorithms, fault diagnosis, aging research, AI, and battery modeling.",
       href: "https://kr.linkedin.com/in/hyunjun-jang-2824a61ba/en",
-      metric: "BMS / AI profile"
+      metric: "1K+ professional network"
     },
     {
       label: "GitHub",
@@ -80,8 +80,7 @@ export const profile = {
 
   compactProof: [
     "7.5+ yrs BMS R&D",
-    "SNU PhD Candidate",
-    "Yonsei Computer Engineering",
+    "1K+ LinkedIn network",
     "1M+ Technical Readers",
     "Publications & Patents"
   ],

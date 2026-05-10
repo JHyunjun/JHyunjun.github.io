@@ -1,23 +1,18 @@
-# Hyunjun Jang Homepage V6
+# Hyunjun Jang Homepage V7
 
-Apple-style refinement version.
+Final premium Apple-style refinement.
 
-## V6 design direction
+## V7 updates
 
-- Less dense first screen.
-- Stronger hero message:
-  - AI.
-  - BMS.
-  - Intelligence.
-  - From high-voltage battery systems to AI-driven diagnostics.
-- One premium battery-intelligence visual object instead of multiple floating cards.
-- Public Presence moved just below hero.
-- SNU / Yonsei custom school badges redesigned.
-- Education section reframed as interdisciplinary fusion:
-  - SNU Chemical and Biological Engineering
-  - Yonsei Computer Engineering
-- Research / Patents now show selected highlights first, with full archive on demand.
-- Large Apple-style keynote statement panels inserted between sections.
+- Fixed hero typography overlap by reducing max hero size and separating object layout.
+- Removed SNU / Yonsei proof chips from the first hero screen.
+- Added LinkedIn professional network proof to the hero:
+  - 1K+ LinkedIn network
+- Changed all-black page into alternating Apple-like dark/light surfaces.
+- Public Presence section now appears as a clean light section.
+- Education remains below, with SNU / Yonsei shown later as a cross-disciplinary story.
+- Research and patents remain selected-first with archive controls.
+- Overall design is cleaner, less crowded, and more premium.
 
 ## Deploy update
 
@@ -25,6 +20,6 @@ Copy all files into the existing `JHyunjun.github.io` local folder, overwrite, t
 
 ```bash
 git add .
-git commit -m "Apple style homepage refinement v6"
+git commit -m "Final premium Apple style refinement v7"
 git push
 ```
