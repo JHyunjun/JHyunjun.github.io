@@ -50,7 +50,7 @@ function Hero() {
 
         <div className="hero-visual-frame">
           <div className="hero-visual-aura" aria-hidden="true" />
-          <img src="/assets/hero-energy-ai.png" alt="Colorful AI battery intelligence visual" />
+          <img src="/assets/hero-battery-ai.png" alt="Colorful AI battery intelligence visual" />
         </div>
       </div>
     </section>
