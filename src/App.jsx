@@ -50,7 +50,7 @@ function Hero() {
 
         <div className="hero-visual-frame">
           <div className="hero-visual-aura" aria-hidden="true" />
-          <img src="/assets/hero-battery-ai.png" alt="Colorful AI battery intelligence visual" />
+          <img src="/assets/hero-energy-ai.png" alt="Colorful AI battery intelligence visual" />
         </div>
       </div>
     </section>
@@ -112,11 +112,6 @@ function Evidence() {
               <div className="evidence-body">
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
-                <div className="metric-row">
-                  <div><strong>{item.value1}</strong><span>{item.metric1}</span></div>
-                  <div><strong>{item.value2}</strong><span>{item.metric2}</span></div>
-                  <div><strong>{item.value3}</strong><span>{item.metric3}</span></div>
-                </div>
               </div>
             </a>
           ))}

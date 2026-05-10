@@ -1,20 +1,22 @@
 export const profile = {
   name: "Hyunjun Jang",
   koreanName: "장현준",
-  headline: "AI · BMS · Intelligence",
   title: "Battery Intelligence Research Engineer",
-  subtitle:
-    "From high-voltage battery systems to AI-driven diagnostics.",
-  identity:
-    "BMS SW/Algorithm Senior Research Engineer · High-Voltage Battery Fault Diagnosis & Aging · PhD Candidate",
-  location: "Korea",
+  subtitle: "From high-voltage battery systems to AI-driven diagnostics.",
+  location: "Seoul, Republic of Korea",
   email: "JHyunjun@users.noreply.github.com",
   github: "https://github.com/JHyunjun",
   blog: "https://limitsinx.tistory.com",
   linkedin: "https://kr.linkedin.com/in/hyunjun-jang-2824a61ba/en",
-  scholar: "#",
 
-  heroLinks: [
+  proofChips: [
+    { value: "7.5+", label: "yrs BMS R&D" },
+    { value: "1K+", label: "professional network" },
+    { value: "1M+", label: "technical readers" },
+    { value: "IP + Papers", label: "publications & patents" }
+  ],
+
+  links: [
     {
       label: "Tistory",
       caption: "1M+ technical readers across battery AI, BMS, deep learning, paper reviews, and engineering notes.",
@@ -32,159 +34,74 @@ export const profile = {
       caption: "Research implementation archive for generative modeling, anomaly detection, PINN, and engineering code.",
       href: "https://github.com/JHyunjun",
       metric: "Code archive"
-    },
-  ],
-
-  credibility: [
-    {
-      value: "7.5+",
-      label: "Years in BMS R&D",
-      detail: "Battery system algorithms, diagnostics, and field-oriented modeling."
-    },
-    {
-      value: "SNU",
-      label: "PhD Candidate",
-      detail: "Chemical & Biological Engineering · battery AI research.",
-      badge: "/assets/snu-badge.svg"
-    },
-    {
-      value: "1M+",
-      label: "Technical Blog Views",
-      detail: "Battery, AI, BMS, and engineering writing for public readers."
-    },
-    {
-      value: "IP + Papers",
-      label: "Research Output",
-      detail: "Battery diagnostics, degradation, GAN/RL modeling, EIS, ICA, and safety."
-    }
-  ],
-
-  education: [
-    {
-      school: "Seoul National University",
-      short: "SNU",
-      degree: "Doctor of Philosophy · PhD Candidate",
-      department: "Chemical and Biological Engineering",
-      meaning: "Battery intelligence grounded in electrochemistry, degradation, and physical systems.",
-      badge: "/assets/snu-badge.svg"
-    },
-    {
-      school: "Yonsei University",
-      short: "Yonsei",
-      degree: "Master of Engineering",
-      department: "Computer Engineering",
-      meaning: "AI, software, data, and algorithmic foundation for battery system intelligence.",
-      badge: "/assets/yonsei-badge.svg"
-    }
-  ],
-
-  compactProof: [
-    "7.5+ yrs BMS R&D",
-    "1K+ LinkedIn network",
-    "1M+ Technical Readers",
-    "Publications & Patents"
-  ],
-
-  keynoteLines: [
-    {
-      line1: "Battery data is not just signal.",
-      line2: "It is a physical trace of degradation."
-    },
-    {
-      line1: "Built from field systems.",
-      line2: "Designed for predictive intelligence."
-    },
-    {
-      line1: "Not AI for batteries.",
-      line2: "Battery intelligence with physical grounding."
     }
   ],
 
   evidenceSnapshot: [
     {
       title: "Battery Diagnostics Patents",
-      body: "Granted and published IP across battery abnormality diagnosis, SOH modeling, aging-aware control, and vehicle battery management.",
-      href: "#patents",
-      icon: "/assets/icon-patents.png"
+      body: "Granted and published IP across battery abnormality diagnosis, SOH modeling, signal processing, and embedded systems.",
+      icon: "/assets/icon-patents-color.png",
+      href: "#patents"
     },
     {
       title: "Journal & Conference Research",
-      body: "Applied Energy, IEEE ITEC, KSAE, JSAE, EVS37, and battery diagnostics / degradation / generative modeling work.",
-      href: "#research",
-      icon: "/assets/icon-research.png"
+      body: "Research published in leading journals and presented at top-tier conferences worldwide.",
+      icon: "/assets/icon-research-color.png",
+      href: "#publications"
     },
     {
       title: "Field-Oriented AI Modeling",
-      body: "A research identity grounded in BMS constraints, high-voltage battery systems, fault diagnosis, real mobility operation, and a dual chemical-engineering / computer-engineering foundation.",
-      href: "#systems",
-      icon: "/assets/icon-ai-modeling.png"
+      body: "AI identity and state estimation under BMS constraints, high-voltage battery systems, and real-world deployment.",
+      icon: "/assets/icon-modeling-color.png",
+      href: "#about"
     }
   ],
 
-  overview:
-    "I work at the intersection of high-voltage battery systems, BMS algorithms, and AI-based modeling. My focus is to move battery intelligence beyond state estimation, toward predictive safety, degradation understanding, and field-valid system intelligence that can survive real operating conditions.",
-  vision:
-    "The long-term goal is to build AI-centered battery physical intelligence: models that do not only fit data, but help explain degradation pathways, operating behavior, safety signatures, abnormality precursors, and time-series variability under real-world constraints.",
-
-  expertise: [
-    { value: "AI", label: "Generative & predictive modeling" },
-    { value: "BMS", label: "Control, diagnosis, and estimation" },
-    { value: "INT", label: "Field-valid intelligence architecture" },
-    { value: "HV", label: "High-voltage battery systems" }
-  ],
+  education: {
+    left: {
+      school: "Seoul National University",
+      department: "Chemical and Biological Engineering",
+      degree: "PhD Candidate",
+      detail: "Advancing electrochemical energy systems and materials.",
+      badge: "/assets/snu-badge.svg"
+    },
+    center: {
+      tag: "Cross-Disciplinary Core",
+      title1: "Battery",
+      title2: "Intelligence",
+      body: "Physical grounding × AI systems × BMS reality"
+    },
+    right: {
+      school: "Yonsei University",
+      department: "Computer Engineering",
+      degree: "Master of Eng.",
+      detail: "AI, embedded systems, and high-performance computing.",
+      badge: "/assets/yonsei-badge.svg"
+    }
+  },
 
   focusAreas: [
     {
       title: "Predictive Battery Safety",
-      body:
-        "Algorithms and intelligence systems for anomaly detection, hazard prediction, and robust battery safety interpretation.",
+      body: "Algorithms and intelligence systems for anomaly detection, hazard prediction, and robust battery safety interpretation.",
       image: "/assets/vision-battery.svg"
     },
     {
       title: "Battery Degradation Intelligence",
-      body:
-        "SOH, RUL, aging, and lithium-plating-aware modeling with time-series understanding, field data grounding, and system deployment in mind.",
+      body: "SOH, RUL, aging, and lithium-plating-aware modeling with time-series understanding, field data grounding, and system deployment in mind.",
       image: "/assets/diag-wave.svg"
     },
     {
       title: "AI-Centered Battery Modeling",
-      body:
-        "Generative, reinforcement-learning, and physics-informed models that push battery analysis from signal fitting to physically meaningful intelligence.",
+      body: "Generative, reinforcement-learning, and physics-informed models that push battery analysis from signal fitting to physically meaningful intelligence.",
       image: "/assets/network-intelligence.svg"
-    }
-  ],
-
-  signatureSystems: [
-    {
-      name: "GAN/RL-Based Battery Modeling",
-      tag: "Generative & Adaptive Battery Intelligence",
-      description:
-        "A research direction for battery time-series generation, control-policy exploration, and dynamics-aware modeling using GAN/RL-style learning under battery operating constraints.",
-      bullets: ["Time-series GAN", "RL-based control", "Teacher-guided dynamics", "Physics-inspired losses"],
-      visual: "/assets/project-cmsgan.svg"
-    },
-    {
-      name: "Predictive Battery Safety & Degradation Intelligence",
-      tag: "AI × BMS",
-      description:
-        "A system-level research direction combining onboard BMS logic, cloud-scale intelligence, fleet signals, and safety-first degradation understanding.",
-      bullets: ["SOC / SOH / RUL", "Safety diagnostics", "Fleet-scale data", "Physics-data fusion"],
-      visual: "/assets/project-safety.svg"
-    },
-    {
-      name: "Frequency-Resolved Diagnostics",
-      tag: "Diagnostic Systems",
-      description:
-        "Frequency-domain and impedance-inspired methodology for fault diagnosis, health inference, and explainable battery monitoring.",
-      bullets: ["Impedance insight", "Signal interpretation", "Anomaly separation", "Explainability"],
-      visual: "/assets/project-frequency.svg"
     }
   ],
 
   publications: [
     {
       title: "Tracking lithium plating-induced health degradation based on battery dynamics",
-      selected: true,
       venue: "Applied Energy · 2026 · Vol. 409 · 127491",
       type: "Journal",
       role: "Co-author",
@@ -194,7 +111,6 @@ export const profile = {
     },
     {
       title: "Development of Fault Battery Cell Diagnosis Technology using a DBSCAN based on the Differential Voltage Analysis",
-      selected: true,
       venue: "KSAE Fall Conference · 2025 · pp. 1511–1516",
       type: "Conference",
       role: "First author",
@@ -222,7 +138,6 @@ export const profile = {
     },
     {
       title: "Development of Battery Data Generation Technology using Time Series Wasserstein GAN Based on Deep Learning",
-      selected: true,
       venue: "JSAE Annual Congress Spring · 2025 · No. 20255333",
       type: "Conference",
       role: "First author",
@@ -259,7 +174,6 @@ export const profile = {
     },
     {
       title: "Online Electrochemical Impedance Spectroscopy Estimation of Lithium-Ion Batteries using a Deep Learning Framework",
-      selected: true,
       venue: "IEEE ITEC · 2023 · DOI: 10.1109/ITEC55900.2023.10187024",
       type: "Conference",
       role: "Co-author",
@@ -290,7 +204,6 @@ export const profile = {
   patents: [
     {
       title: "Apparatus for managing battery and method thereof",
-      selected: true,
       number: "US 12,607,684 B2 · US20240345170 A1",
       status: "Granted / Published application",
       year: "2026 / 2024",
@@ -299,7 +212,6 @@ export const profile = {
     },
     {
       title: "Battery diagnosis apparatus for vehicle and method thereof",
-      selected: true,
       number: "US 12,142,090 B2",
       status: "Granted",
       year: "2024",
@@ -324,7 +236,6 @@ export const profile = {
     },
     {
       title: "Apparatus for diagnosing abnormality in battery cell and method thereof",
-      selected: true,
       number: "US20250208226 A1",
       status: "Published application",
       year: "2025",
@@ -349,7 +260,6 @@ export const profile = {
     },
     {
       title: "Method of building battery SOH estimation model based on actual vehicle collection big data and battery SOH model building system",
-      selected: true,
       number: "US20240151773 A1",
       status: "Published application",
       year: "2024",
@@ -388,11 +298,5 @@ export const profile = {
       topic: "Big-data-based battery diagnostic system",
       href: "#"
     }
-  ],
-
-  statements: [
-    "Not just state estimation.",
-    "Battery intelligence with predictive depth.",
-    "AI systems designed for field reality.",
   ]
 };
