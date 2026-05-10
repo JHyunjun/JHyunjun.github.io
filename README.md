@@ -1,17 +1,23 @@
-# Hyunjun Jang Homepage V5
+# Hyunjun Jang Homepage V6
 
-Education-enhanced Apple-inspired research homepage.
+Apple-style refinement version.
 
-## V5 updates
+## V6 design direction
 
-- Added SNU mini badge beside the SNU credibility card.
-- Added Education section:
-  - Seoul National University · PhD Candidate · Chemical and Biological Engineering
-  - Yonsei University · M.Eng · Computer Engineering
-- Strengthened cross-disciplinary positioning:
-  - electrochemistry / battery systems
-  - AI / software / algorithmic engineering
-- Kept V4 authority metrics, research, patent, and evidence sections.
+- Less dense first screen.
+- Stronger hero message:
+  - AI.
+  - BMS.
+  - Intelligence.
+  - From high-voltage battery systems to AI-driven diagnostics.
+- One premium battery-intelligence visual object instead of multiple floating cards.
+- Public Presence moved just below hero.
+- SNU / Yonsei custom school badges redesigned.
+- Education section reframed as interdisciplinary fusion:
+  - SNU Chemical and Biological Engineering
+  - Yonsei Computer Engineering
+- Research / Patents now show selected highlights first, with full archive on demand.
+- Large Apple-style keynote statement panels inserted between sections.
 
 ## Deploy update
 
@@ -19,6 +25,6 @@ Copy all files into the existing `JHyunjun.github.io` local folder, overwrite, t
 
 ```bash
 git add .
-git commit -m "Add education badges and interdisciplinary positioning"
+git commit -m "Apple style homepage refinement v6"
 git push
 ```

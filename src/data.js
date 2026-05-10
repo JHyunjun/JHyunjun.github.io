@@ -4,7 +4,7 @@ export const profile = {
   headline: "AI · BMS · Intelligence",
   title: "Battery Intelligence Research Engineer",
   subtitle:
-    "High-voltage battery diagnostics, aging prediction, and AI-based battery modeling for real-world mobility systems.",
+    "From high-voltage battery systems to AI-driven diagnostics.",
   identity:
     "BMS SW/Algorithm Senior Research Engineer · High-Voltage Battery Fault Diagnosis & Aging · PhD Candidate",
   location: "Korea",
@@ -75,6 +75,29 @@ export const profile = {
       department: "Computer Engineering",
       meaning: "AI, software, data, and algorithmic foundation for battery system intelligence.",
       badge: "/assets/yonsei-badge.svg"
+    }
+  ],
+
+  compactProof: [
+    "7.5+ yrs BMS R&D",
+    "SNU PhD Candidate",
+    "Yonsei Computer Engineering",
+    "1M+ Technical Readers",
+    "Publications & Patents"
+  ],
+
+  keynoteLines: [
+    {
+      line1: "Battery data is not just signal.",
+      line2: "It is a physical trace of degradation."
+    },
+    {
+      line1: "Built from field systems.",
+      line2: "Designed for predictive intelligence."
+    },
+    {
+      line1: "Not AI for batteries.",
+      line2: "Battery intelligence with physical grounding."
     }
   ],
 
@@ -159,6 +182,7 @@ export const profile = {
   publications: [
     {
       title: "Tracking lithium plating-induced health degradation based on battery dynamics",
+      selected: true,
       venue: "Applied Energy · 2026 · Vol. 409 · 127491",
       type: "Journal",
       role: "Co-author",
@@ -168,6 +192,7 @@ export const profile = {
     },
     {
       title: "Development of Fault Battery Cell Diagnosis Technology using a DBSCAN based on the Differential Voltage Analysis",
+      selected: true,
       venue: "KSAE Fall Conference · 2025 · pp. 1511–1516",
       type: "Conference",
       role: "First author",
@@ -195,6 +220,7 @@ export const profile = {
     },
     {
       title: "Development of Battery Data Generation Technology using Time Series Wasserstein GAN Based on Deep Learning",
+      selected: true,
       venue: "JSAE Annual Congress Spring · 2025 · No. 20255333",
       type: "Conference",
       role: "First author",
@@ -231,6 +257,7 @@ export const profile = {
     },
     {
       title: "Online Electrochemical Impedance Spectroscopy Estimation of Lithium-Ion Batteries using a Deep Learning Framework",
+      selected: true,
       venue: "IEEE ITEC · 2023 · DOI: 10.1109/ITEC55900.2023.10187024",
       type: "Conference",
       role: "Co-author",
@@ -261,6 +288,7 @@ export const profile = {
   patents: [
     {
       title: "Apparatus for managing battery and method thereof",
+      selected: true,
       number: "US 12,607,684 B2 · US20240345170 A1",
       status: "Granted / Published application",
       year: "2026 / 2024",
@@ -269,6 +297,7 @@ export const profile = {
     },
     {
       title: "Battery diagnosis apparatus for vehicle and method thereof",
+      selected: true,
       number: "US 12,142,090 B2",
       status: "Granted",
       year: "2024",
@@ -293,6 +322,7 @@ export const profile = {
     },
     {
       title: "Apparatus for diagnosing abnormality in battery cell and method thereof",
+      selected: true,
       number: "US20250208226 A1",
       status: "Published application",
       year: "2025",
@@ -317,6 +347,7 @@ export const profile = {
     },
     {
       title: "Method of building battery SOH estimation model based on actual vehicle collection big data and battery SOH model building system",
+      selected: true,
       number: "US20240151773 A1",
       status: "Published application",
       year: "2024",
